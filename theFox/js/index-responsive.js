@@ -384,6 +384,9 @@ function handleTouchMove(evt) {
 		//alert("left swipe");
 		//nếu chưa hiện menu thì khi vuốt sang trái sẽ hiện menu
 		if(!document.querySelector("#menu-top.menuTopAppear")){
+			//set checked true cho checkbox để label của nó thành dấu X
+			document.querySelector('#menu-btn').checked=true;
+			
 			$('body').toggleClass('bodyToLeft');
 			$('#menu-top').toggleClass('menuTopAppear');
 		}
@@ -392,6 +395,9 @@ function handleTouchMove(evt) {
 		//alert("right swipe");
 		//nếu đã hiện menu thì vuốt sang phải sẽ ẩn menu
 		if(document.querySelector("#menu-top.menuTopAppear")){
+			//set checked false cho checkbox để label của nó thành dấu 3 gạch ngang
+			document.querySelector('#menu-btn').checked=false;
+			
 			$('body').toggleClass('bodyToLeft');
 			$('#menu-top').toggleClass('menuTopAppear');
 		}
