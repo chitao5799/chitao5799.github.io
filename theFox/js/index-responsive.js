@@ -381,18 +381,28 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             /* left swipe */ 
-		alert("left swipe");
+		//alert("left swipe");
+		//nếu chưa hiện menu thì khi vuốt sang trái sẽ hiện menu
+		if(!document.querySelector("#menu-top.menuTopAppear")){
+			$('body').toggleClass('bodyToLeft');
+			$('#menu-top').toggleClass('menuTopAppear');
+		}
         } else {
             /* right swipe */
-		alert("right swipe");
+		//alert("right swipe");
+		//nếu đã hiện menu thì vuốt sang phải sẽ ẩn menu
+		if(document.querySelector("#menu-top.menuTopAppear")){
+			$('body').toggleClass('bodyToLeft');
+			$('#menu-top').toggleClass('menuTopAppear');
+		}
         }                       
     } else {
         if ( yDiff > 0 ) {
             /* up swipe */ 
-		alert("up swipe");
+		//alert("up swipe");
         } else { 
             /* down swipe */
-		alert("down swipe");
+	//	alert("down swipe");
         }                                                                 
     }
     /* reset values */
